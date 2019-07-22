@@ -8,6 +8,8 @@ func main() {
 	tmpl := iris.HTML("./static", ".html")
 	app.RegisterView(tmpl)
 
+	app.StaticWeb("/", "./static")
+
 	app.Get("/hello", func(ctx iris.Context) {
 		ctx.JSON(iris.Map{
 			"message": "Hello Iris",
